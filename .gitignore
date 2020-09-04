@@ -1,0 +1,13 @@
+.npm
+
+# dependencies
+node_modules
+packages/**/node_modules
+package-lock.json
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+**/coverage

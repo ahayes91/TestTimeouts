@@ -1,0 +1,13 @@
+{
+    "childApp.noBranchesYet.title": "No Branches Yet",
+    "childApp.noBranchesYet.message": "To add branches to this tree, start typing below.",
+    "childApp.branchesUnavailable.title": "Branches are not available",
+    "childApp.branchesUnavailable.message": "The branch is no longer on your tree.",
+    "childApp.branchesLoading": "Branches are loading",
+    "childApp.cancelButton": "Cancel",
+    "childApp.sendButton": "Send",
+    "childApp.newBranch": "New Branch",
+    "parentApp.goBack": "Go Back",
+    "parentApp.heading": "Trees in the holes in the bog",
+    "parentApp.subHeading": "Branches on the trees in the holes in the bog"
+}

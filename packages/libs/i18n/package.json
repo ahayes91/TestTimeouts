@@ -1,0 +1,10 @@
+{
+  "name": "@test/i18n",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "echo No separate build script for @test/i18n",
+    "test": "jest"
+  }
+}

@@ -1,0 +1,1 @@
+export { renderWithReactIntl } from './mocks';

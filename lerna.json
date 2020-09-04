@@ -1,0 +1,7 @@
+{
+  "packages": ["packages/apps/*", "packages/libs/*"],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "concurrency": 4
+}

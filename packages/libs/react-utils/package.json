@@ -1,0 +1,15 @@
+{
+  "name": "@test/react-utils",
+  "version": "1.0.0",
+  "description": "Collection of react utility functions",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "echo No separate build script for @test/react-utils",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "core-js": "^3.3.2"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=12.7.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/apps/*",
+      "packages/libs/*"
+    ],
+    "nohoist": [
+      "**/@material-ui/"
+    ]
+  },
+  "scripts": {
+    "test": "yarn lerna run test",
+    "test:changed": "yarn lerna run test -- --since=origin/master",
+    "test:coverage": "yarn lerna run test -- -- --coverage",
+    "test:ci": "yarn lerna run test -- --since=origin/master -- --coverage --maxWorkers=4",
+    "postinstall": "sh ./scripts/temp_until_patchJest.sh",
+    "nuke": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
+    "nukestall": "yarn nuke && yarn install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn jest --changedSince=origin/master --passWithNoTests"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.5.5",
+    "@testing-library/react": "9.3.2",
+    "@testing-library/react-hooks": "3.2.1",
+    "@testing-library/user-event": "^10.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-add-module-exports": "1.0.2",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-rewire": "^1.2.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "fs-extra": "^8.1.0",
+    "husky": "^3.0.8",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-each": "^24.8.0",
+    "jest-junit": "^10.0.0",
+    "jest-pact": "^0.5.4",
+    "lerna": "^3.20.2"
+  },
+  "dependencies": {
+    "jest-axe": "^3.5.0"
+  }
+}
