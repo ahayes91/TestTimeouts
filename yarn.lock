@@ -983,11 +983,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@ed/baseline@2.22.0":
-  version "2.22.0"
-  resolved "https://repo.br.hmheng.io/artifactory/api/npm/content-engg-npm/@ed/baseline/-/@ed/baseline-2.22.0.tgz#3b4623400531bb40e7945ab0cbdb5418e370913e"
-  integrity sha1-O0YjQAUxu0DnlFqwy9tUGONwkT4=
-
 "@emotion/hash@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
