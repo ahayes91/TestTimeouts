@@ -4,6 +4,8 @@
  - `yarn install` at the root
  - `yarn test` to run all tests
  - `yarn test:ci` to run the same test command we run in the CI
+ - `yarn test-with-memory-and-inspector` to run the node memory inspector with Chrome
+ - `yarn workspace @test/parentApp --detect-leaks` to run the tests for the main parent app (including the flaky integration tests) with the flag to detect memory leaks
 
 ## Functionality of the app
 
