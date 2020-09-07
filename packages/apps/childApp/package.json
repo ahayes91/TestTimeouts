@@ -9,7 +9,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@ed/baseline": "2.22.0",
     "@test/core-api": "^1.0.0",
     "@test/i18n": "^1.0.0",
     "@test/react-mocks": "^1.0.0",
