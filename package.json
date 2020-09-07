@@ -20,7 +20,9 @@
     "test:coverage": "yarn lerna run test -- -- --coverage",
     "test:ci": "yarn lerna run test -- --since=origin/master -- --coverage --maxWorkers=4",
     "nuke": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
-    "nukestall": "yarn nuke && yarn install"
+    "nukestall": "yarn nuke && yarn install",
+    "test-with-memory": "node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage",
+    "test-with-memory-and-inspector": "node --inspect-brk --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage"
   },
   "husky": {
     "hooks": {
