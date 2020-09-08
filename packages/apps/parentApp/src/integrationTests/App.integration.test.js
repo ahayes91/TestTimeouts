@@ -11,6 +11,13 @@ import {
   handlerForNoBranchOnTheTree,
 } from './__mocks__/mocks';
 
+// Adding this makes the test pass with no leaks!
+jest.mock('axios-cache-adapter', () => {
+  return {
+    setupCache: jest.fn(),
+  };
+});
+
 const server = setupServer(...handlers);
   beforeAll(() => {
     server.listen({
