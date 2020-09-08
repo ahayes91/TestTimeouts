@@ -1,6 +1,6 @@
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
-import { setupCache } from 'axios-cache-adapter';
+// import { setupCache } from 'axios-cache-adapter';
 import backoff from './utils/backoff';
 
 // Exported only for unit test coverage
@@ -10,12 +10,12 @@ export const customCacheInvalidate = async (config, request) => {
   }
 };
 
-const cache = setupCache({
-  // 15 minute cache
-  maxAge: 15 * 60 * 1000,
-  // Invalidate only when a specific option is passed through config
-  invalidate: customCacheInvalidate,
-});
+// const cache = setupCache({
+//   // 15 minute cache
+//   maxAge: 15 * 60 * 1000,
+//   // Invalidate only when a specific option is passed through config
+//   invalidate: customCacheInvalidate,
+// });
 
 export const getHeaderWithoutAuth = (optionalHeaders = {}) => {
   return {
@@ -46,7 +46,7 @@ export const createAxiosCancelable = ({
   const canceler = axios.CancelToken.source();
   const auth = getHeaderWithoutAuth();
   if (withCache) {
-    auth.adapter = cache.adapter;
+    // auth.adapter = cache.adapter;
   }
   const client = axios.create(auth);
   axiosRetry(client, backoff(min, max));
