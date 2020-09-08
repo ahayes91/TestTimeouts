@@ -119,58 +119,58 @@ describe('axiosHelpers', () => {
 
       expect(backoff).toHaveBeenCalledWith(expectedMin, expectedMax);
     });
-    describe('cache', () => {
-      beforeEach(() => {
-        jest.clearAllMocks();
-      });
+    // describe('cache', () => {
+    //   beforeEach(() => {
+    //     jest.clearAllMocks();
+    //   });
 
-      it('when withCache is true, axios create is called with adapter', () => {
-        createAxiosCancelable({ withCache: true });
+    //   it('when withCache is true, axios create is called with adapter', () => {
+    //     createAxiosCancelable({ withCache: true });
 
-        expect(axios.create).toBeCalledWith(
-          expect.objectContaining({
-            adapter: expect.any(Function),
-          }),
-        );
-      });
+    //     expect(axios.create).toBeCalledWith(
+    //       expect.objectContaining({
+    //         adapter: expect.any(Function),
+    //       }),
+    //     );
+    //   });
 
-      it('when withCache is false, axios create is called without adapter', () => {
-        createAxiosCancelable({ withCache: false });
+    //   it('when withCache is false, axios create is called without adapter', () => {
+    //     createAxiosCancelable({ withCache: false });
 
-        expect(axios.create).not.toBeCalledWith(
-          expect.objectContaining({
-            adapter: expect.any(Function),
-          }),
-        );
-      });
+    //     expect(axios.create).not.toBeCalledWith(
+    //       expect.objectContaining({
+    //         adapter: expect.any(Function),
+    //       }),
+    //     );
+    //   });
 
-      it('when withCache not specified, axios create is called without adapter', () => {
-        createAxiosCancelable();
+    //   it('when withCache not specified, axios create is called without adapter', () => {
+    //     createAxiosCancelable();
 
-        expect(axios.create).not.toBeCalledWith(
-          expect.objectContaining({
-            adapter: expect.any(Function),
-          }),
-        );
-      });
+    //     expect(axios.create).not.toBeCalledWith(
+    //       expect.objectContaining({
+    //         adapter: expect.any(Function),
+    //       }),
+    //     );
+    //   });
 
-      it('when invalidate function on cache is called, it looks for clearCacheEntry in the request before invalidating the cache', async () => {
-        const mockRemoveItem = jest.fn();
-        const mockUuid = 'mockUuid';
-        const mockConfig = {
-          store: {
-            removeItem: mockRemoveItem,
-          },
-          uuid: mockUuid,
-        };
+    //   it('when invalidate function on cache is called, it looks for clearCacheEntry in the request before invalidating the cache', async () => {
+    //     const mockRemoveItem = jest.fn();
+    //     const mockUuid = 'mockUuid';
+    //     const mockConfig = {
+    //       store: {
+    //         removeItem: mockRemoveItem,
+    //       },
+    //       uuid: mockUuid,
+    //     };
 
-        customCacheInvalidate(mockConfig, {});
-        expect(mockRemoveItem).not.toHaveBeenCalled();
-        const mockRequest = { clearCacheEntry: true };
+    //     customCacheInvalidate(mockConfig, {});
+    //     expect(mockRemoveItem).not.toHaveBeenCalled();
+    //     const mockRequest = { clearCacheEntry: true };
 
-        customCacheInvalidate(mockConfig, mockRequest);
-        expect(mockRemoveItem).toHaveBeenCalledWith(mockUuid);
-      });
-    });
+    //     customCacheInvalidate(mockConfig, mockRequest);
+    //     expect(mockRemoveItem).toHaveBeenCalledWith(mockUuid);
+    //   });
+    // });
   });
 });
